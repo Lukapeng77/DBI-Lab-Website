@@ -1,7 +1,7 @@
 ---
 name: Chew Han Shi
 image: images/team/Jocelyn-Chew-Photo.avif
-role: principal-investigator
+role: pi
 affiliation: National University of Singapore
 aliases:
   - Jocelyn

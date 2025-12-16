@@ -1,9 +1,9 @@
 ---
 ---
 
-# Lukapeng77's Website
+# DBI Lab's Website
 
-An engaging 1-3 sentence description of your lab.
+A brief description of DBI Lab.
 
 {% include section.html %}
 
