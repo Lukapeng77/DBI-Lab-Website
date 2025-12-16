@@ -1,6 +1,6 @@
 ---
 name: Chew Han Shi
-image: images/team/Jocelyn-Chew-Photo.avif
+image: images/team/Prof_Chew_Photo.jpg
 role: pi
 affiliation: National University of Singapore
 aliases:
