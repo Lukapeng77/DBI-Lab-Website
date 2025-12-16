@@ -3,7 +3,7 @@
 
 # DBI Lab's Website
 
-A brief description of DBI Lab.
+A brief description of DBI Lab: what our main tasks are and what we aim to do to improve or enhance human's life.
 
 {% include section.html %}
 
