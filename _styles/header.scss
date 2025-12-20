@@ -102,10 +102,12 @@ nav {
   gap: 10px;
   font-family: var(--heading);
   text-transform: uppercase;
+  // Slightly larger nav text site-wide for readability.
+  font-size: 1.1rem;
 }
 
 nav > a {
-  padding: 5px;
+  padding: 7px 8px;
 }
 
 nav > a:hover {
@@ -158,11 +160,23 @@ header[data-big] {
     text-align: center;
   }
 
+  nav {
+    // Make homepage navigation more prominent, but still responsive.
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    gap: 14px;
+  }
+
+  nav > a {
+    padding: 8px 10px;
+  }
+
   .title {
-    font-size: var(--xxl);
+    // Home banner title should be visibly larger and responsive.
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
   }
 
   .subtitle {
-    font-size: var(--large);
+    // Home banner subtitle should scale with viewport, but remain secondary.
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
   }
 }
