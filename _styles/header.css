@@ -120,10 +120,10 @@ nav > a:hover {
 
 header[data-big] {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto;
-  grid-template-areas: "home profile" "nav  profile";
-  column-gap: 60px;
+  grid-template-areas: ". home profile" ". nav  profile";
+  column-gap: 40px;
   row-gap: 18px;
   justify-content: center;
   align-items: center;
@@ -164,7 +164,7 @@ header[data-big] .home-profile {
   grid-area: profile;
   justify-self: end;
   align-self: center;
-  max-width: 280px;
+  max-width: 260px;
 }
 header[data-big] .home-profile .portrait {
   margin: 0;
@@ -174,7 +174,7 @@ header[data-big] .home-profile .portrait {
 header[data-big] .home-profile .portrait-image {
   margin-bottom: 14px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   header[data-big] {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
