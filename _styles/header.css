@@ -35,6 +35,14 @@ header a {
   height: 100%;
 }
 
+.logo img,
+.logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .title-text {
   display: flex;
   justify-content: flex-start;
@@ -131,14 +139,24 @@ header[data-big] {
   top: unset;
 }
 header[data-big] .home {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 110px auto 110px;
+  align-items: center;
+  justify-items: center;
+  column-gap: 18px;
   flex-grow: 0;
   grid-area: home;
   justify-self: center;
 }
 header[data-big] .logo {
-  height: 80px;
+  height: 110px;
+  width: 110px;
   flex-shrink: 0;
+}
+header[data-big] .logo-spacer {
+  width: 110px;
+  height: 1px;
+  visibility: hidden;
 }
 header[data-big] .title-text {
   flex-direction: column;
