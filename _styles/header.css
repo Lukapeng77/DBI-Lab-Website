@@ -130,9 +130,9 @@ header[data-big] {
   --home-logo-w: clamp(220px, 20vw, 320px);
   --home-profile-w: 260px;
   display: grid;
-  grid-template-columns: var(--home-profile-w) auto var(--home-profile-w);
+  grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
-  grid-template-areas: "spacer home profile" "spacer nav  profile";
+  grid-template-areas: "home profile" "nav  profile";
   column-gap: 40px;
   row-gap: 18px;
   justify-content: center;
@@ -141,20 +141,17 @@ header[data-big] {
   top: unset;
 }
 header[data-big] .home-profile-spacer {
-  grid-area: spacer;
-  width: var(--home-profile-w);
-  height: 1px;
-  visibility: hidden;
+  display: none;
 }
 header[data-big] .home {
-  display: grid;
-  grid-template-columns: var(--home-logo-w) max-content var(--home-logo-w);
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-items: center;
-  column-gap: clamp(24px, 3vw, 60px);
+  justify-content: flex-start;
+  gap: clamp(28px, 4vw, 80px);
   flex-grow: 0;
   grid-area: home;
-  justify-self: center;
+  justify-self: start;
 }
 header[data-big] .logo {
   width: var(--home-logo-w);
@@ -166,14 +163,13 @@ header[data-big] .logo > * {
   height: auto;
 }
 header[data-big] .logo-spacer {
-  width: var(--home-logo-w);
-  height: 1px;
-  visibility: hidden;
+  display: none;
 }
 header[data-big] .title-text {
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  min-width: 0;
 }
 header[data-big] nav {
   grid-area: nav;
@@ -186,6 +182,7 @@ header[data-big] nav > a {
 }
 header[data-big] .title {
   font-size: clamp(2rem, 3.6vw, 2.9rem);
+  white-space: nowrap;
 }
 header[data-big] .subtitle {
   font-size: clamp(1.2rem, 2.2vw, 1.8rem);
