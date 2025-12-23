@@ -146,18 +146,16 @@ header[data-big] {
   // Responsive homepage logo width (logo.png is rectangular).
   // Tune this to control how large the DBI Lab logo appears.
   --home-logo-w: clamp(220px, 20vw, 320px);
-  // Keep the banner content truly centered even when the PI profile is present.
+  // PI profile width target (keeps the right block consistent).
   --home-profile-w: 260px;
 
-  // Desktop layout: title/nav centered, PI profile on the right.
+  // Desktop layout: logo on the left, banner text in one row, PI profile on the right.
   display: grid;
-  // Use symmetric left/right columns. The left one is an invisible spacer
-  // matching the PI profile width, so the center column does not shift.
-  grid-template-columns: var(--home-profile-w) auto var(--home-profile-w);
+  grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "spacer home profile"
-    "spacer nav  profile";
+    "home profile"
+    "nav  profile";
   column-gap: 40px;
   row-gap: 18px;
   justify-content: center;
@@ -168,26 +166,21 @@ header[data-big] {
     top: unset;
   }
 
+  // Reclaim horizontal space so the title can stay in one row.
   .home-profile-spacer {
-    grid-area: spacer;
-    width: var(--home-profile-w);
-    height: 1px;
-    visibility: hidden;
+    display: none;
   }
 
   .home {
-    // Keep the title/subtitle perfectly centered on the page while
-    // placing the logo to its left (and an invisible spacer to the right).
-    display: grid;
-    // Use `max-content` so the title stays in one row on desktop.
-    grid-template-columns: var(--home-logo-w) max-content var(--home-logo-w);
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-items: center;
+    justify-content: flex-start;
     // More space between logo and banner title.
-    column-gap: clamp(24px, 3vw, 60px);
+    gap: clamp(28px, 4vw, 80px);
     flex-grow: 0;
     grid-area: home;
-    justify-self: center;
+    justify-self: start;
   }
 
   .logo {
@@ -204,15 +197,14 @@ header[data-big] {
   }
 
   .logo-spacer {
-    width: var(--home-logo-w);
-    height: 1px;
-    visibility: hidden;
+    display: none;
   }
 
   .title-text {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
   }
 
   nav {
@@ -230,6 +222,7 @@ header[data-big] {
   .title {
     // Home banner title should be visibly larger and responsive.
     font-size: clamp(2.0rem, 3.6vw, 2.9rem);
+    white-space: nowrap;
   }
 
   .subtitle {
