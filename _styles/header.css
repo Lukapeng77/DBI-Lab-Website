@@ -148,10 +148,10 @@ header[data-big] .home-profile-spacer {
 }
 header[data-big] .home {
   display: grid;
-  grid-template-columns: var(--home-logo-w) auto var(--home-logo-w);
+  grid-template-columns: var(--home-logo-w) max-content var(--home-logo-w);
   align-items: center;
   justify-items: center;
-  column-gap: 18px;
+  column-gap: clamp(24px, 3vw, 60px);
   flex-grow: 0;
   grid-area: home;
   justify-self: center;
