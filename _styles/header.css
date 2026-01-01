@@ -130,9 +130,9 @@ header[data-big] {
   --home-logo-w: clamp(220px, 20vw, 320px);
   --home-profile-w: 260px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: var(--home-profile-w) 1fr var(--home-profile-w);
   grid-template-rows: auto auto;
-  grid-template-areas: "home profile" "nav  profile";
+  grid-template-areas: "spacer home profile" "spacer nav  profile";
   column-gap: 40px;
   row-gap: 18px;
   justify-content: center;
@@ -141,17 +141,20 @@ header[data-big] {
   top: unset;
 }
 header[data-big] .home-profile-spacer {
-  display: none;
+  grid-area: spacer;
+  width: var(--home-profile-w);
+  height: 1px;
+  visibility: hidden;
 }
 header[data-big] .home {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: clamp(28px, 4vw, 80px);
   flex-grow: 0;
   grid-area: home;
-  justify-self: start;
+  justify-self: center;
 }
 header[data-big] .logo {
   width: var(--home-logo-w);
@@ -192,6 +195,7 @@ header[data-big] .home-profile {
   justify-self: end;
   align-self: center;
   max-width: var(--home-profile-w);
+  width: var(--home-profile-w);
 }
 header[data-big] .home-profile .portrait {
   margin: 0;
@@ -201,7 +205,7 @@ header[data-big] .home-profile .portrait {
 header[data-big] .home-profile .portrait-image {
   margin-bottom: 14px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   header[data-big] {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -215,6 +219,9 @@ header[data-big] .home-profile .portrait-image {
   }
   header[data-big] .home-profile-spacer {
     display: none;
+  }
+  header[data-big] .title {
+    white-space: normal;
   }
 }
 
