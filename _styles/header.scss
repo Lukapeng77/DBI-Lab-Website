@@ -149,13 +149,15 @@ header[data-big] {
   // PI profile width target (keeps the right block consistent).
   --home-profile-w: 260px;
 
-  // Desktop layout: logo on the left, banner text in one row, PI profile on the right.
+  // Desktop layout: truly centered banner + PI profile on right.
+  // We use a symmetric left spacer that matches the PI profile width so the
+  // banner sits on the true page center (aligned with content below).
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: var(--home-profile-w) 1fr var(--home-profile-w);
   grid-template-rows: auto auto;
   grid-template-areas:
-    "home profile"
-    "nav  profile";
+    "spacer home profile"
+    "spacer nav  profile";
   column-gap: 40px;
   row-gap: 18px;
   justify-content: center;
@@ -166,21 +168,23 @@ header[data-big] {
     top: unset;
   }
 
-  // Reclaim horizontal space so the title can stay in one row.
   .home-profile-spacer {
-    display: none;
+    grid-area: spacer;
+    width: var(--home-profile-w);
+    height: 1px;
+    visibility: hidden;
   }
 
   .home {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     // More space between logo and banner title.
     gap: clamp(28px, 4vw, 80px);
     flex-grow: 0;
     grid-area: home;
-    justify-self: start;
+    justify-self: center;
   }
 
   .logo {
@@ -235,6 +239,7 @@ header[data-big] {
     justify-self: end;
     align-self: center;
     max-width: var(--home-profile-w);
+    width: var(--home-profile-w);
   }
 
   // Tighten the portrait component spacing inside the header.
@@ -248,7 +253,7 @@ header[data-big] {
     margin-bottom: 14px;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -265,6 +270,11 @@ header[data-big] {
 
     .home-profile-spacer {
       display: none;
+    }
+
+    // On smaller screens, allow wrapping instead of overflow.
+    .title {
+      white-space: normal;
     }
   }
 }
