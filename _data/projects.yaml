@@ -3,7 +3,8 @@
   group: Closed
   image: images/photo.jpg
   link: https://github.com/
-  description: Improving weight loss in healthy adults with overweight and obesity: An artificial intelligence-assisted dietary prediction and prevention system with continuous glucose monitoring.
+  description: >-
+    Improving weight loss in healthy adults with overweight and obesity: An artificial intelligence-assisted dietary prediction and prevention system with continuous glucose monitoring.
   repo: greenelab/lab-website-template
   tags:
     - resource
@@ -22,7 +23,8 @@
   subtitle: a subtitle
   image: images/photo.jpg
   link: https://github.com/
-  description: Understanding Body Image, Weight Stigma and Professional Identity among Healthcare Students and Staff: A Cross-Sectional Study​ .
+  description: >-
+    Understanding Body Image, Weight Stigma and Professional Identity among Healthcare Students and Staff: A Cross-Sectional Study​ .
   repo: greenelab/lab-website-template
   tags:
     - resource
