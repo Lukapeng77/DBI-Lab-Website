@@ -3,7 +3,7 @@
 
 # DBI Lab's Website
 
-## Brief description of DBI Lab: 
+## Brief Description: 
 DBI Lab is a translational research lab based at the National University of Singapore that integrates behavioral science, digital health, and artificial intelligence to improve cardiometabolic health and population well-being.The lab focuses on working in multidisciplinary teams to develop, evaluate, and implement theory-driven, data-enabled interventions that bridge the intention–behaviour gap in real-world healthcare and community settings.
 
 {% include section.html %}
