@@ -32,7 +32,8 @@
   group: Ongoing
   image: images/photo.jpg
   link: https://forms.gle/Rew6brmot3iK1oJE8
-  description: The Effect of Social Comparison Direction on Daily Calorie Intake: A Randomized Crossover Trial Study.
+  description: >-
+    The Effect of Social Comparison Direction on Daily Calorie Intake: A Randomized Crossover Trial Study.
   repo: greenelab/lab-website-template
   tags:
     - resource
