@@ -145,7 +145,7 @@ header:not([data-big]) {
 header[data-big] {
   // Responsive homepage logo width (logo.png is rectangular).
   // Tune this to control how large the DBI Lab logo appears.
-  --home-logo-w: clamp(220px, 20vw, 320px);
+  --home-logo-w: clamp(280px, 24vw, 420px);
   // PI profile width target (keeps the right block consistent).
   --home-profile-w: 260px;
   // Keep the homepage title+nav aligned with the main content width (see _styles/section.scss).
@@ -171,7 +171,7 @@ header[data-big] {
   .home-logo {
     grid-area: logo;
     justify-self: start;
-    align-self: center;
+    align-self: start;
   }
 
   .home-logo .logo {
@@ -189,7 +189,7 @@ header[data-big] {
   .home-title {
     grid-area: title;
     justify-self: center;
-    align-self: center;
+    align-self: start;
     max-width: 100%;
   }
 
@@ -226,7 +226,7 @@ header[data-big] {
   .home-profile {
     grid-area: profile;
     justify-self: end;
-    align-self: center;
+    align-self: start;
     max-width: var(--home-profile-w);
     width: var(--home-profile-w);
   }
@@ -234,7 +234,7 @@ header[data-big] {
   // Tighten the portrait component spacing inside the header.
   .home-profile .portrait {
     margin: 0;
-    width: 260px;
+    width: var(--home-profile-w);
     max-width: 100%;
   }
 
