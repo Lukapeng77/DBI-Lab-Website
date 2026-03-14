@@ -3,10 +3,18 @@
 
 $page: 1000px;
 $padding: 40px;
+$section-breakpoint: $page + ($padding * 2);
 
 section {
-  padding: $padding max($padding, calc((100% - $page) / 2));
+  padding: $padding;
   transition: background var(--transition), color var(--transition);
+}
+
+@media (min-width: $section-breakpoint) {
+  section {
+    padding-left: calc((100% - #{$page}) / 2);
+    padding-right: calc((100% - #{$page}) / 2);
+  }
 }
 
 section[data-size="wide"] {

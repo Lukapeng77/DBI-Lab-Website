@@ -6,11 +6,18 @@ $one: 500px;
 
 .cols {
   display: grid;
-  --repeat: min(3, var(--cols));
-  grid-template-columns: repeat(var(--repeat), 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
   gap: 40px;
   margin: 40px 0;
+}
+
+.cols[data-cols="1"] {
+  grid-template-columns: 1fr;
+}
+
+.cols[data-cols="2"] {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .cols > * {
@@ -28,12 +35,16 @@ $one: 500px;
 
 @media (max-width: $two) {
   .cols {
-    --repeat: min(2, var(--cols));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cols[data-cols="1"] {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: $one) {
   .cols {
-    --repeat: min(1, var(--cols));
+    grid-template-columns: 1fr;
   }
 }
