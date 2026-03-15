@@ -1,8 +1,14 @@
 section {
-  padding: 40px max(40px, (100% - 1000px) / 2);
+  padding: 40px;
   transition: background var(--transition), color var(--transition);
 }
 
+@media (min-width: 1080px) {
+  section {
+    padding-left: calc((100% - 1000px) / 2);
+    padding-right: calc((100% - 1000px) / 2);
+  }
+}
 section[data-size=wide] {
   padding: 40px;
 }
